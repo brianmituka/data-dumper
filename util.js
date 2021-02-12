@@ -10,7 +10,7 @@ const log = function (message) {
 
 const writeToFile = function(mobile, data, phase, date) {
     let fd;
-    let dataToWrite = `${mobile}  ${data} ${date};\n`
+    let dataToWrite = `${mobile},${data},${date}\n`
     try {
         fd = fs.openSync(phase, 'a')
         fs.appendFileSync(fd, dataToWrite, 'utf-8')
